@@ -1,0 +1,52 @@
+package ObjectOrientation;
+
+class Inventory
+{
+	private int currentCapacity;
+	private int maxCapacity;
+	private int minCapacity;
+	
+	public int getCurrentCapacity()
+	{
+		return currentCapacity;
+	}
+	public int getMaxCapacity()
+	{
+		return maxCapacity;
+	}
+	public int getMinCapacity()
+	{
+		return minCapacity;
+	}
+	
+	public void setCurrentCapacity(int cc)
+	{
+		currentCapacity=cc;
+	}
+	public void setMaxCapacity(int mac)
+	{
+		maxCapacity=mac;
+	}
+	public void setMinCapacity(int mic)
+	{
+		minCapacity=mic;
+	}
+}
+
+public class GetSetGo 
+{
+
+	public static void main(String[] args) 
+	{
+		Inventory i1=new Inventory();
+		i1.setCurrentCapacity(1000);
+		i1.setMaxCapacity(2000);
+		i1.setMinCapacity(100);
+		
+		System.out.println("Current Capacity:"+i1.getCurrentCapacity());
+		System.out.println("Maximum Capacity:"+i1.getMaxCapacity());
+		System.out.println("Minimum Capacity:"+i1.getMinCapacity());
+
+	}
+
+}
