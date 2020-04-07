@@ -1,0 +1,61 @@
+
+class Vehicle
+{
+	 String name;
+	 int price;	
+	
+	public String calValue()
+	{
+		if(price>100000)
+			return "Too high";
+		else if(price<=1000000 & price>500000)
+			return "Moderate";
+		else
+			return "Cheap";
+	}
+}
+
+class Car extends Vehicle
+{
+	String type;
+	public Car(String name,int price,String type)
+	{
+		this.name=name;
+		this.price=price;
+		this.type=type;
+	}
+	public void display()
+	{
+		System.out.println(name+" is a "+type+" with price "+price);
+	}
+}
+
+class Bike extends Vehicle
+{
+	
+	public Bike(String name,int price)
+	{
+		this.name=name;
+		this.price=price;
+	}
+	public void display()
+	{
+		System.out.println(name+" is a bike with price "+price);
+	}
+		
+}
+
+public class VehicleDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Car c=new Car("Honda City",1500000,"SUV");
+		Bike b=new Bike("Bajaj Pular",70000);
+        c.display();
+        System.out.println("Value:"+c.calValue());
+        b.display();
+        System.out.println("Value:"+b.calValue());
+	}
+
+}
