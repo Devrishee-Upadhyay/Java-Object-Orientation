@@ -1,0 +1,61 @@
+
+class Player
+{
+	String name;
+	String game;
+	int matches;
+	public void print()
+	{
+		System.out.println(name+" plays "+game);
+	}
+}
+class Cricketer extends Player
+{
+	int runs;
+	int wickets;
+	public Cricketer(String name,int matches, int runs,int wickets)
+	{
+		this.name=name;
+		this.game="Cricket";
+		this.matches=matches;
+		this.runs=runs;
+		this.wickets=wickets;
+	}
+	public void print()     //overriding the print method for Cricketer class.
+	{
+		super.print();     // calls the print method of Player class.
+		System.out.println(name+" has "+runs+" runs and "+wickets+" wickets in"+matches+" matches.");
+	}
+}
+
+class Footballer extends Player
+{
+	int goals;
+	public Footballer(String name,int matches, int goals)
+	{
+		this.name=name;
+		this.game="Football";
+		this.matches=matches;
+		this.goals=goals;
+	}
+	
+	public void print()     //overriding the print method for Footballer class
+	{
+		super.print();      // calls the print method of Player class.
+		System.out.println(name+" has "+goals+" goals in "+matches+" matches.");
+	}
+	
+}
+public class PlayerDemo {
+
+	public static void main(String[] args) 
+	{
+		Footballer f=new Footballer("Leo Messi",500,470);
+		f.print();
+		
+		Cricketer c=new Cricketer("MS Dhoni",500,11000,5);
+		c.print();
+
+	}
+
+}
