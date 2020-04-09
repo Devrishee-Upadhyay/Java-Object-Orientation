@@ -1,0 +1,41 @@
+
+interface StockExchange
+{	
+	public void showCountry();
+	public String closingVal();
+}
+
+abstract class Sensex implements StockExchange          // An abtsract class need not implement all methods of an interface
+{		
+	public void showCountry()
+	{
+		System.out.println("Sensex is the stock exchange of India");
+	}	
+	
+}
+
+class DetailedSensex extends Sensex                     // The first concrete subclass has to implement all methods of interfaces which 
+{                                                       // have not been implemented.
+	int val;
+	public DetailedSensex(int val)
+	{
+		this.val=val;
+	}
+	public String closingVal()
+	{
+		return "Sensex closed at "+val+" points.";
+	}
+}
+
+public class InterfaceDemo 
+{
+	public static void main(String[] args) 
+	{
+		
+         DetailedSensex s=new DetailedSensex(9000);
+         s.showCountry();
+         System.out.println(s.closingVal());
+         
+	}
+
+}
