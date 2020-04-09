@@ -1,0 +1,45 @@
+
+class Supertype
+{
+	public void display()
+	{
+		System.out.println("Super class's method");
+	}
+}
+class Subtype extends Supertype
+{
+	public void display()
+	{
+		System.out.println("Subtype class's method");
+	}
+	
+	public void display(String s)
+	{
+		System.out.println(s);
+	}
+}
+public class OverLoadRideDemo 
+{
+
+	public static void main(String[] args) 
+	{
+	
+		Supertype s1=new Supertype();
+		s1.display();
+		
+		Supertype s2=new Subtype();
+		s2.display();
+		
+		//Supertype s3=new Subtype();         
+		//s2.display("Show this ");          This statement will produce error becuase for overloaded methods
+		                                  // declared type is used and here declared type of 'Supertype' does
+		                                  //  not contain display(String s) function.
+		Subtype s4=new Subtype();
+		s4.display();
+		
+		Subtype s5=new Subtype();
+		s5.display("Calling Overloaded display method");
+		
+	}
+
+}
