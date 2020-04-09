@@ -1,0 +1,36 @@
+
+class Adder
+{
+  public int add(int a ,int b)
+  {
+	  return a+b;
+  }
+  
+  public double add(double a , double b)
+  {
+	return a+b;  
+  }
+}
+
+class Addition extends Adder
+{
+	public String add(String A,String B)    // Overloading can be done in subclass too.
+	{
+		return A+B;
+	}
+}
+
+public class OverloadDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Adder a=new Adder();
+		System.out.println(a.add(1,2));
+		System.out.println(a.add(2.5, 3.5));
+		
+		Addition a1=new Addition();
+		System.out.println(a1.add("Just ", "do it."));
+	}
+
+}
