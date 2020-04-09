@@ -1,0 +1,51 @@
+
+class Company
+{
+	String name;
+	int employees;
+	public Company(String name,int employees)
+	{
+		this.name=name;
+		this.employees=employees;
+	}
+	public void display()
+	{
+		System.out.println(name+" has "+employees+" employees.");
+	}
+}
+
+class Barclays extends Company
+{
+	int revenue;
+	int costs;
+	public Barclays(int employees,int rev,int costs)
+	{
+		super("Barclays",employees);
+		this.revenue=rev;
+		this.costs=costs;
+	}
+	public void display()
+	{
+		System.out.println(name+" has a revenue of "+revenue+" million $");	
+	}
+	
+	public void showProfit()
+	{
+		System.out.println("Profit is:"+(revenue-costs)+" million $");
+	}
+}
+public class CastingDemo 
+{
+	public static void main(String[] args) 
+	{
+		Company c=new Barclays(5000,900,400);
+		c.display();
+		
+		if(c instanceof Barclays)
+		{
+		((Barclays)c).showProfit();     // By typecasting c to type Barclays, it can now access method specific to Barclays.
+		}
+
+	}
+
+}
