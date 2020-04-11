@@ -1,0 +1,36 @@
+
+class Area
+{
+	int returnArea(int l,int b)
+	{
+		return l*b;
+	}
+}
+
+class Triangle
+{
+	int l,b;
+	Area a;
+   public Triangle(int l,int b)
+   {
+	   this.l=l;
+	   this.b=b;
+   }
+   
+   void calArea()
+   {
+	   a=new Area();
+	   System.out.println("Area of triangle is "+a.returnArea(l, b)/2);
+   }
+}
+
+public class CompositionDemo 
+{
+
+	public static void main(String[] args) 
+	{	 
+		Triangle t=new Triangle(4,6);
+		t.calArea();
+	}
+
+}
