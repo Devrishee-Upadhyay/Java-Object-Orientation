@@ -1,0 +1,36 @@
+
+class Companies
+{
+	String name;
+	int value;
+	public Companies()
+	{
+		this.name="";
+		this.value=0;
+		System.out.println("Welcome Onboard.");
+	}
+	public Companies(String name)
+	{
+		this.name=name;
+		System.out.println("Welcome to "+name);
+	}
+	public Companies(String name,int value)
+	{
+		this.name=name;
+		this.value=value;
+		System.out.println("Welcome to "+name+".It has a valuation of "+value+" Bn $");
+	}
+	
+}
+
+public class ConstructorDemo1 {
+
+	public static void main(String[] args) 
+	{
+		Companies c=new Companies();
+		Companies c1=new Companies("OYO rooms");
+		Companies c2=new Companies("Reliance Ltd",100);
+
+	}
+
+}
