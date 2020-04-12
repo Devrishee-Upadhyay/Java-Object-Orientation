@@ -1,0 +1,63 @@
+
+class Restaurant
+{
+	String name;
+	int capacity;
+	int turnover;
+	double rating;
+	static double MIN_RAT=1; 
+	Restaurant(String name,int capacity,int turnover,double rating)
+	{
+		this.name=name;
+		this.capacity=capacity;
+		this.turnover=turnover;
+		this.rating=rating;
+	}
+	Restaurant(String name,double rating)
+	{
+		this(name,0,0,rating);    // 'this()' is used to call any overloaded constructor of the class.
+		
+	}
+	Restaurant(String name)
+	{
+		this(name,0,0,MIN_RAT);
+	}
+	
+	public void Print()
+	{
+		System.out.println(name+" is a top restaurant with a rating of "+rating);
+		if(capacity==0)
+		{
+			System.out.println("Capacity is not decided yet");
+		}
+		else
+		{
+		System.out.println("Capacity is "+capacity);
+		}
+		
+		if(turnover==0)
+		{
+			System.out.println("Turnover is classified.");
+		}
+		else
+		{
+		System.out.println("Turnover is "+turnover+" cr.");
+		}
+		
+		System.out.println("--------------------------------------------");
+	}
+}
+public class ConstructorDemo3 
+{
+
+	public static void main(String[] args) 
+	{		
+           Restaurant r1=new Restaurant("Big Yellow Door",3.5);
+           Restaurant r2=new Restaurant("Chillis",70,10,4);
+           Restaurant r3=new Restaurant("AMA cafe");
+           r1.Print();
+           r2.Print();
+           r3.Print();
+	}
+
+}
