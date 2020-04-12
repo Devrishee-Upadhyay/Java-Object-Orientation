@@ -1,0 +1,39 @@
+
+class A
+{
+	A()
+	{
+		System.out.println("This is a No-arg constructor");
+	}
+	A(int a)
+	{
+		System.out.println("According to this constructor, you should smile "+a+" times today");
+	}
+	
+}
+
+class B extends A
+{
+	B()
+	{                             // If you don't explicitly write super than it is implicitly written by the complier
+ 	   super();
+	}
+	B(String s,int c)
+	{
+		super(c);                // Calls the parameterized constructor of parent class
+		System.out.println("Showing string "+s);
+	}
+}
+public class ConstructorDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		
+          A a1=new A();
+          A a2=new A(5);
+          B b1=new B();
+          B b2=new B("Hello World!",10);
+	}
+
+}
