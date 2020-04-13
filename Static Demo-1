@@ -1,0 +1,23 @@
+class Cars
+{
+	static int count=0;
+	String type;
+	public Cars(String type)
+	{
+	   this.type=type;
+	   System.out.println("Manufacturing an "+type);
+	   count++;
+	   System.out.println("Number of cars manufactured:"+count);
+	}
+}
+public class StaticDemo1 {
+
+	public static void main(String[] args) 
+	{
+		
+            Cars c1=new Cars("SUV");
+            Cars c2=new Cars("Hatchback");
+            Cars c3=new Cars("Jeep");
+	}
+
+}
