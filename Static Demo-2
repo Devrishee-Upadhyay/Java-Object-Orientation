@@ -1,0 +1,35 @@
+
+class Onboarding
+{
+	static int student_count;
+	static void show()
+	{
+		System.out.println("Welcome to this B-school.");
+	}
+	Onboarding()
+	{
+		student_count++;
+	}
+	static void peopleCount()
+	{
+		System.out.println("Batch currently has "+student_count+" students");   // if stident_count was non static, there would be error in this method
+	}
+}
+public class StaticDemo2 
+{
+
+	public static void main(String[] args) 
+	{
+		Onboarding.show();
+		
+		new Onboarding();
+		new Onboarding();
+		new Onboarding();
+		new Onboarding();
+		new Onboarding();
+		
+		Onboarding.peopleCount();
+		
+	}
+
+}
