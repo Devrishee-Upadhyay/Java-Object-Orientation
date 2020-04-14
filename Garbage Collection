@@ -1,0 +1,41 @@
+
+class Collector
+{
+	int a;
+	public Collector(int val)
+	{
+		a=val;
+	}
+}
+class Isolate
+{
+	Isolate i;
+}
+public class GarbageCollectionDemo 
+{
+    
+	public static void main(String[] args) 
+	{
+	  	Collector c1=new Collector(3);
+	  	System.out.println(c1.a);
+        c1=null;                            // to make object eligible for garbage collection we can null the reference
+        
+        Collector c2=new Collector(4);
+        Collector c3=new Collector(5);
+        c2=c3;                             // after c2 also points to object pointed by c3, the original object is for garbage collection
+        
+        
+        Isolate i1=new Isolate();
+        Isolate i2=new Isolate();
+        Isolate i3=new Isolate();
+        i1.i=i2;
+        i2.i=i3;
+        i3.i=i1;
+        i1=null;
+        i2=null;
+        i3=null;
+        
+        
+	}
+
+}
