@@ -1,0 +1,37 @@
+
+class Perimeter
+{
+	int length;
+	int width;
+	public Perimeter(int l,int w)
+	{
+		length=l;
+		width=w;
+	}
+	void changeLength(Perimeter p,int x)
+	{
+		p.length=p.length+x;
+	}
+	void changeWidth(int x)
+	{
+		this.width+=x;
+	}
+}
+
+public class MethodPassingDemo 
+{
+
+	public static void main(String[] args) 
+	{
+	 	Perimeter p1=new Perimeter(5,10);
+	 	System.out.println("Lenth is:"+p1.length);
+	 	p1.changeLength(p1,2);
+	 	System.out.println("New Length is:"+p1.length);            // The length changes because we are passing a reference variable to the method.
+	 	
+	 	Perimeter p2=new Perimeter(4,6);
+	 	System.out.println("Width is:"+p2.width);
+	 	p1.changeWidth(2);
+	 	System.out.println("New Width is:"+p2.width);              // No change because we have passed primitive variable in the method.
+	}
+
+}
