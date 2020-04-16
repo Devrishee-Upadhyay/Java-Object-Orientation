@@ -1,0 +1,53 @@
+
+class Country
+{
+	String name; 
+	public boolean equals(Object o)                    // Overriding the equals method of Object class
+	{
+		Country c=(Country)o;
+		
+		if(c.name==this.name)
+			return true;
+		
+		return false;
+	}
+	
+	Country(String name)
+	{
+		this.name=name;
+	}
+}
+
+class City
+{
+	String name;
+	
+	City(String name)
+	{
+		this.name=name;
+	}
+	
+}
+public class EqualsDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		City c1=new City("New Delhi");
+		City c2=new City("New York");
+		City c3=new City("New Delhi");
+		
+		Country co1=new Country("India"); 
+		Country co2=new Country("US");
+		Country co3=new Country("India");
+		
+		
+		System.out.println(c1.equals(c2));
+		System.out.println(c1.equals(c3));                  // Because there is no equals definition, it treats c1 and c2 as non-equivalent
+		
+		System.out.println(co1.equals(co2));
+		System.out.println(co1.equals(co3));               // Because of equals method, equivalence condition is Country name.
+		
+	}
+
+}
