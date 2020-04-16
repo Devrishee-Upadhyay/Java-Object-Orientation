@@ -1,0 +1,48 @@
+
+class Beverage
+{
+	
+}
+
+class Juice extends Beverage
+{
+	String fruit_name;
+	public Juice(String s)
+	{
+		fruit_name=s;
+	}
+	
+	void show()
+	{
+		System.out.println("This is a "+fruit_name+" juice.");
+	}
+}
+public class InstanceOfDemo 
+{
+
+	public static void main(String[] args) 
+	{
+       Beverage []b={new Juice("Orange"),new Beverage()};
+       Juice j=new Juice("Pineapple");
+       
+       for(Beverage b1:b)
+       {
+	       if(b1 instanceof Juice)                   // instanceof checks if the variable on left is reference to class/subclass on right
+	       {
+	    	   ((Juice) b1).show();                   
+	       }
+	       else
+	       {
+	    	   System.out.println("No luck");
+	       }
+       
+       }
+       
+       if(j instanceof Juice)
+       {
+    	   ((Juice) j).show();
+       }
+
+	}
+
+}
