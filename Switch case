@@ -1,0 +1,37 @@
+
+public class SwitchDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		String str="test";
+		
+		switch(str)
+		{
+		   case "Test":
+			   System.out.println("Match found in case 1");
+			   break;
+		   case "TEST":
+			   System.out.println("Match found in case 2");
+			   break;
+		   default:
+			   System.out.println("Match found in default");
+			   break;
+		}
+			   
+		switch(str.length())
+		{
+		   case 1:
+			   System.out.println("length is 1");
+		   case 3:
+			   System.out.println("length is 2");
+		   case 4:
+			   System.out.println("length is 4");        // when we don't use 'break' the compiler prints every case code even after the match
+		   default:
+			   System.out.println("Length out of reach");
+		
+		}
+
+	}
+
+}
