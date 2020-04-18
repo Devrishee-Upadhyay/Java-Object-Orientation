@@ -1,0 +1,35 @@
+
+public class LabelDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Outer_b:
+			for(int i=0;i<3;i++)
+			 {
+				 System.out.println("Inside outer loop");
+				 for(int j=0;j<2;j++)
+				 {
+					 if(j==1)
+						 break Outer_b;                 // when j=1 for i=0, control,breaks out of both loops because of label
+					 System.out.println("Inside inner loop");
+				 }
+			 }	
+	    System.out.println("Outside both loops after break");
+	    
+	    
+	    Outer_c:
+	    	for(int i=0;i<3;i++)
+			 {
+	    		for(int j=0;j<3;j++)
+	    		{
+	    			System.out.println("Hello World!");
+	    			continue Outer_c;                   // becuase of label, 'World' is always skipped.
+	    		}
+	    		System.out.println("World");
+			 }
+	    System.out.println("Outside both loops after continue");
+	    
+	}
+
+}
