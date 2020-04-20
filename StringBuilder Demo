@@ -1,0 +1,23 @@
+
+public class StringBuilderDemo 
+{
+	public static void main(String[] args) 
+	{
+		StringBuilder s1=new StringBuilder();
+		s1.append("Hello");
+		
+		StringBuilder s2=new StringBuilder("Peace");
+		
+		StringBuilder s3=new StringBuilder(10);
+		StringBuilder s4=s3.append("World");              // s3 and s4 both contain the same value
+		
+		System.out.println(s1+" "+s2+" "+s3+" "+s4);
+        
+        s2.insert(5, " in our times");
+		System.out.println(s2);
+		
+		s1.delete(4, 5).reverse();        // chaining of methods in Stringbuilder class
+		System.out.println(s1);
+	}
+
+}
