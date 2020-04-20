@@ -1,0 +1,32 @@
+
+interface Currency 
+{
+	public void showValue(String s);
+}
+
+interface EWallet                      //These are functional interfaces, meaning only 1 abstract method.
+{
+	public void showName();
+	
+}
+public class LambdaDemo 
+{
+	public static void main(String[] args) 
+	{
+		Currency c1=new Currency()
+				{
+			       public void showValue(String s)              //This way without using a class we can implement an abstract method of interface
+			       {
+			    	   System.out.println("Currency is "+s);
+			       }
+				};
+				
+		EWallet e1=()->                                        // This is lambda expression, here we can directly declare abstract method of functional interface
+			           {
+	    	                System.out.println("Using E-Wallet paytm");
+	                   };
+                 
+     c1.showValue("Dollars");
+     e1.showName();
+	}
+}
