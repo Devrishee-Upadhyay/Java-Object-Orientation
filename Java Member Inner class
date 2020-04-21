@@ -1,0 +1,38 @@
+
+class Continent
+{
+	private String name;
+	class Country                         //Inner class
+	{
+		String s_name;
+		int population;
+		public Country(String s,int n)
+		{
+			s_name=s;
+			population=n;
+		}
+		void show()
+		{
+			System.out.println(s_name+" is a country in "+name+" with a population of "+population);
+		}
+		
+	}
+	public Continent(String name)
+	{
+		this.name=name;
+	}
+}
+
+public class InnerClassDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Continent c1=new Continent("Asia");
+		Continent.Country co=c1.new Country("India",1300000000);
+		
+		co.show();
+
+	}
+
+}
