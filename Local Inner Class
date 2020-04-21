@@ -1,0 +1,32 @@
+
+class Local
+{
+	int val;
+	Local(int val)
+	{
+		this.val=val;
+	}
+	public void localAreaMethod()     
+	{
+		class InnerLocal                    //Local inner class declared inside a method
+		{
+			double pi=3.14;
+			public double calculate()
+			{
+				return pi*val*val;
+			}
+		}
+		
+		InnerLocal i=new InnerLocal();      //Local inner class instantiated inside the method
+		System.out.println("Area of radius "+val+" is "+i.calculate());
+	}
+}
+public class LocalInnerClass {
+
+	public static void main(String[] args)
+	{
+		Local l=new Local(4);
+		l.localAreaMethod();
+	}
+
+}
