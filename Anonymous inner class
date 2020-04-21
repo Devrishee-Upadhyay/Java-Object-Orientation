@@ -1,0 +1,39 @@
+
+abstract class Outer
+{
+	int points;
+	public Outer(int points)
+	{
+		this.points=points;
+	}
+	abstract void show();
+}
+
+interface Outer2
+{
+	abstract void display();
+}
+public class AnonymousClassDemo 
+{
+	
+	public static void main(String[] args) 
+	{		
+           Outer o1=new Outer(5)              //defining a class but with no name(anonymous)
+        		   {
+        	             void show()
+        	             {
+        	            	 System.out.println("This is a method in anonymous inner class with "+points+" points");
+        	             }
+        		   };
+        		   
+           Outer2 o2=new Outer2()
+        		   {
+        	             public void display()
+        	             {
+        	            	 System.out.println("This is a method in anonymous interface");
+        	             }
+        	             
+        		   };
+	}
+
+}
