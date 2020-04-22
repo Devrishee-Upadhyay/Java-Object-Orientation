@@ -1,0 +1,31 @@
+
+class Statical
+{
+	static int count;
+	String name;
+	
+	static class Inner
+	{                           // static inner class cannot access non-static outer class variables/methods
+		void display()
+		{
+			count++;
+		    System.out.println("Count is "+count);
+		}
+		static void show()
+		{
+			System.out.println("Showing static method of static inner class");
+		}
+	}
+}
+public class StaticInnerClassDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Statical.Inner obj=new Statical.Inner();   // There is no need to make object of out class because 
+		obj.display();                             // for it 'Inner' is static , so can be used with class name
+
+		Statical.Inner.show();           // for inner class static method , no object of inner and outer class needed
+	}
+
+}
