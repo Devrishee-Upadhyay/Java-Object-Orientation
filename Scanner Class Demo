@@ -1,0 +1,45 @@
+package user.input.series;
+import java.util.*;
+
+class Student
+{
+	String name;
+	int age;
+	double cgpa;
+	
+	Student(String name,int age,double cgpa)
+	{
+		this.name=name;
+		this.age=age;
+		this.cgpa=cgpa;
+	}
+	public void show()
+	{
+		System.out.println(name+" is "+age+" years old with CGPA "+cgpa);
+	}
+}
+public class ScannerDemo1 
+{
+
+	public static void main(String[] args) 
+	{
+	   	Scanner sc=new Scanner(System.in);               //creating object os scanner class with input using keyboard
+	   	System.out.println("Enter Details:");
+	   	
+	   	System.out.print("Enter Name:");
+	   	String s=sc.next();
+	   	System.out.println();
+	   	System.out.print("Enter Age:");
+	   	int c=sc.nextInt();
+	   	System.out.println();
+	   	System.out.print("Enter CGPA:");
+	    double d=sc.nextDouble();
+	   	System.out.println();
+        sc.close();
+        
+        Student st=new Student(s,c,d);
+        st.show();
+        
+	}
+
+}
